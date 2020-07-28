@@ -1,6 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Random;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -66,12 +70,12 @@ public class Thesaurusizer {
     private void addActionListenersToButtons(){
         submitButton.addActionListener(e -> {
             String[] inputWords = inputArea.getText().split(" ");
-            String[] synonyms = new String[0];
-
+            String[] synonyms;
+            Random random = new Random();
             for (String input : inputWords) {
                 try {
                     synonyms = searchThesaurus(input);
-                    resultArea.append(synonyms[0]+ " ");
+                    resultArea.append(synonyms[random.nextInt(synonyms.length - 1 )]+ " ");
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -85,11 +89,26 @@ public class Thesaurusizer {
     }
 
     private String[] searchThesaurus(String input) throws IOException {
-
-        Document doc = Jsoup.connect("https://www.thesaurus.com/browse/" + input).get();
-        String ele = doc.select(".et6tpn80").first().text();
-        String[] result = ele.split(" ");
+        String url = "https://www.thesaurus.com/browse/" + input;
+        if(isValidURL(url)){
+            Document doc = Jsoup.connect(url).get();
+            String element = doc.select(".et6tpn80").first().text();
+            String[] result = element.split(" ");
+            return result;
+        }
+        String result[] = {input, input};
         return result;
+    }
+
+    private boolean isValidURL(String urlInput) throws IOException {
+        URL url = new URL(urlInput);
+        HttpURLConnection huc = (HttpURLConnection) url.openConnection();
+        int responseCode = huc.getResponseCode();
+        if(responseCode == 200){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public static void main(String[] args){
