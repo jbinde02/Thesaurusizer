@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c30bbaa-f05c-4c19-8933-b53023132266" name="Default Changelist" comment="" />
+    <list default="true" id="5c30bbaa-f05c-4c19-8933-b53023132266" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/libs/jsoup-1.13.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jsoup_1_13_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_13_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thesaurusizer/Thesaurusizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thesaurusizer/Thesaurusizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Thesaurusizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thesaurusizer.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,16 +24,26 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1fFkGzRnNtVeGuoRLPivzVK9KPa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/Java/Additional Libraries/jsoup-1.13.1.jar!/" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/jsoup-1.13.1.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="Thesarususizer" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -62,5 +78,18 @@
       <updated>1595821136726</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
