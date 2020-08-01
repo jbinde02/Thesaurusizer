@@ -70,12 +70,11 @@ public class Thesaurusizer {
     private void addActionListenersToButtons(){
         submitButton.addActionListener(e -> {
             String[] inputWords = inputArea.getText().split(" ");
-            String[] synonyms;
-            Random random = new Random();
+            int chanceToSkip = 60;
             for (String input : inputWords) {
                 try {
-                    synonyms = searchThesaurus(input);
-                    resultArea.append(synonyms[random.nextInt(synonyms.length - 1 )]+ " ");
+                    String[] synonymsArray = searchThesaurus(input, chanceToSkip);
+                    resultArea.append(chooseRandomSynonym(synonymsArray));
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -88,27 +87,43 @@ public class Thesaurusizer {
         });
     }
 
-    private String[] searchThesaurus(String input) throws IOException {
+    private String[] searchThesaurus(String input, int chanceToSkip) throws IOException {
+        if(randomChance(chanceToSkip)){
+            return new String[]{input, input};
+        }
         String url = "https://www.thesaurus.com/browse/" + input;
         if(isValidURL(url)){
             Document doc = Jsoup.connect(url).get();
-            String element = doc.select(".et6tpn80").first().text();
-            String[] result = element.split(" ");
-            return result;
+            String element = doc.select(".et6tpn80").first().text(); // ".et6tpn80" is the HTML Class where the synonyms are displayed
+            return element.split(" ");
         }
-        String result[] = {input, input};
-        return result;
+        return new String[]{input, input};
     }
 
     private boolean isValidURL(String urlInput) throws IOException {
         URL url = new URL(urlInput);
         HttpURLConnection huc = (HttpURLConnection) url.openConnection();
-        int responseCode = huc.getResponseCode();
-        if(responseCode == 200){
+        if(huc.getResponseCode() == 200){
             return true;
         }else{
             return false;
         }
+    }
+
+    private String chooseRandomSynonym(String[] synonymArray){
+        Random random = new Random();
+        return synonymArray[random.nextInt(synonymArray.length - 1 )]+ " ";
+    }
+
+    private boolean randomChance(int chance){
+        Random random = new Random();
+        if(chance>100){
+            chance = 100;
+        }else if(chance<0){
+            chance = 0;
+        }
+
+        return chance >= random.nextInt(100);
     }
 
     public static void main(String[] args){
