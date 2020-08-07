@@ -1,13 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Random;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 
 public class Thesaurusizer {
     private JFrame frame;
@@ -71,11 +68,26 @@ public class Thesaurusizer {
         submitButton.addActionListener(e -> {
             String[] inputWords = inputArea.getText().split(" ");
             int chanceToSkip = 60;
-            for (String input : inputWords) {
+            int wordsPerThread = 10;
+
+            String[][] splitInputWords = splitWordArray(inputWords, wordsPerThread);
+            FutureTask[] synonymTasks = new FutureTask[splitInputWords.length];
+            for(int i = 0; i<synonymTasks.length; i++){
+                synonymTasks[i] = new FutureTask<Synonymer>(new Synonymer(splitInputWords[i], chanceToSkip));
+            }
+
+            for(FutureTask ft : synonymTasks){
+                Thread t = new Thread(ft);
+                t.start();
+            }
+
+            for(FutureTask ft : synonymTasks){
                 try {
-                    String[] synonymsArray = searchThesaurus(input, chanceToSkip);
-                    resultArea.append(chooseRandomSynonym(synonymsArray));
-                } catch (IOException ex) {
+                    String[] result = (String[]) ft.get();
+                    for(String s : result){
+                        resultArea.append(s);
+                    }
+                } catch (InterruptedException | ExecutionException ex) {
                     ex.printStackTrace();
                 }
             }
@@ -87,43 +99,18 @@ public class Thesaurusizer {
         });
     }
 
-    private String[] searchThesaurus(String input, int chanceToSkip) throws IOException {
-        if(randomChance(chanceToSkip)){
-            return new String[]{input, input};
+    private String[][] splitWordArray(String[] inputArray, int split){
+        String[][] splitWordArrays = new String[inputArray.length / split + 1][];
+        String[] splitArray = new String[3];
+        for(int i = 0; i<splitWordArrays.length; i++){
+            if((inputArray.length - 1) > i * split + split - 1){
+                splitArray = Arrays.copyOfRange(inputArray,i * split,i * split + split);
+            }else{
+                splitArray = Arrays.copyOfRange(inputArray,i * split, inputArray.length);
+            }
+            splitWordArrays[i] = splitArray;
         }
-        String url = "https://www.thesaurus.com/browse/" + input;
-        if(isValidURL(url)){
-            Document doc = Jsoup.connect(url).get();
-            String element = doc.select(".et6tpn80").first().text(); // ".et6tpn80" is the HTML Class where the synonyms are displayed
-            return element.split(" ");
-        }
-        return new String[]{input, input};
-    }
-
-    private boolean isValidURL(String urlInput) throws IOException {
-        URL url = new URL(urlInput);
-        HttpURLConnection huc = (HttpURLConnection) url.openConnection();
-        if(huc.getResponseCode() == 200){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    private String chooseRandomSynonym(String[] synonymArray){
-        Random random = new Random();
-        return synonymArray[random.nextInt(synonymArray.length - 1 )]+ " ";
-    }
-
-    private boolean randomChance(int chance){
-        Random random = new Random();
-        if(chance>100){
-            chance = 100;
-        }else if(chance<0){
-            chance = 0;
-        }
-
-        return chance >= random.nextInt(100);
+        return splitWordArrays;
     }
 
     public static void main(String[] args){
