@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c30bbaa-f05c-4c19-8933-b53023132266" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Synonymer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Thesaurusizer/Thesaurusizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thesaurusizer/Thesaurusizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Synonymer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Synonymer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Thesaurusizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thesaurusizer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

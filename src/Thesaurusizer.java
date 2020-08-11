@@ -3,7 +3,6 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 public class Thesaurusizer {
@@ -66,12 +65,12 @@ public class Thesaurusizer {
 
     private void addActionListenersToButtons(){
         submitButton.addActionListener(e -> {
-            String[] inputWords = inputArea.getText().split(" ");
             int chanceToSkip = 60;
             int wordsPerThread = 10;
-
-            String[][] splitInputWords = splitWordArray(inputWords, wordsPerThread);
+            String[] inputWords = inputArea.getText().split(" ");
+            String[][] splitInputWords = splitStringArray(inputWords, wordsPerThread);
             FutureTask[] synonymTasks = new FutureTask[splitInputWords.length];
+
             for(int i = 0; i<synonymTasks.length; i++){
                 synonymTasks[i] = new FutureTask<Synonymer>(new Synonymer(splitInputWords[i], chanceToSkip));
             }
@@ -99,7 +98,7 @@ public class Thesaurusizer {
         });
     }
 
-    private String[][] splitWordArray(String[] inputArray, int split){
+    private String[][] splitStringArray(String[] inputArray, int split){
         String[][] splitWordArrays = new String[inputArray.length / split + 1][];
         String[] splitArray = new String[3];
         for(int i = 0; i<splitWordArrays.length; i++){
@@ -113,7 +112,7 @@ public class Thesaurusizer {
         return splitWordArrays;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         Thesaurusizer th = new Thesaurusizer();
     }
 }
