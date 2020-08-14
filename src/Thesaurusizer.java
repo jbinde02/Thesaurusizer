@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.io.IOException;
 import java.util.Arrays;
@@ -11,6 +13,11 @@ public class Thesaurusizer {
     private JTextArea resultArea, inputArea;
     private JScrollPane resultPane, inputPane;
     private JButton clearButton, submitButton;
+    private JSlider chanceSlider;
+    private final int CHANCE_TO_SKIP_MIN = 0;
+    private final int CHANCE_TO_SKIP_MAX = 100;
+    private final int CHANCE_TO_SKIP_INIT = 60;
+    private int chanceToSkip = CHANCE_TO_SKIP_INIT;
     private Thesaurusizer(){
         // <Swing>
         frame = new JFrame("Thesaurusizer");
@@ -39,6 +46,25 @@ public class Thesaurusizer {
         constraints.gridy = 1;
         mainPanel.add(submitButton, constraints);
 
+        chanceSlider = new JSlider(JSlider.HORIZONTAL, CHANCE_TO_SKIP_MIN, CHANCE_TO_SKIP_MAX, CHANCE_TO_SKIP_INIT);
+        constraints.anchor = GridBagConstraints.CENTER;
+        constraints.gridx = 1;
+        constraints.gridy = 1;
+        mainPanel.add(chanceSlider,constraints);
+        chanceSlider.setPaintLabels(true);
+        chanceSlider.setPaintTicks(true);
+        chanceSlider.setSnapToTicks(true);
+        chanceSlider.setMajorTickSpacing(20);
+        chanceSlider.setMinorTickSpacing(5);
+        chanceSlider.addChangeListener(e -> {
+            setChanceToSkip(chanceSlider.getValue());
+        });
+
+        JLabel sliderLabel = new JLabel("Chance To Skip");
+        constraints.gridx = 1;
+        constraints.gridy = 1;
+        mainPanel.add(sliderLabel);
+
         clearButton = new JButton("Clear");
         constraints.anchor = GridBagConstraints.LINE_END;
         constraints.gridx = 0;
@@ -65,7 +91,6 @@ public class Thesaurusizer {
 
     private void addActionListenersToButtons(){
         submitButton.addActionListener(e -> {
-            int chanceToSkip = 60;
             int wordsPerThread = 10;
             String[] inputWords = inputArea.getText().split(" ");
             String[][] splitInputWords = splitStringArray(inputWords, wordsPerThread);
@@ -110,6 +135,10 @@ public class Thesaurusizer {
             splitWordArrays[i] = splitArray;
         }
         return splitWordArrays;
+    }
+
+    private void setChanceToSkip(int chanceToSkip){
+        this.chanceToSkip = chanceToSkip;
     }
 
     public static void main(String[] args) throws IOException {
