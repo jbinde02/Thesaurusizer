@@ -6,18 +6,23 @@ import java.net.URL;
 import java.util.Random;
 import java.util.concurrent.Callable;
 
+// Offline Thesaurus provided by https://github.com/zaibacu/thesaurus
+
 public class Synonymer implements Callable {
     private String[] inputWordArray;
     private int chanceToSkip;
+    private ThesaurusMap thesaurusMap;
 
     public Synonymer(String[] inputWordArray, int chanceToSkip){
         this.inputWordArray = inputWordArray;
         this.chanceToSkip = chanceToSkip;
+        this.thesaurusMap = new ThesaurusMap();
     }
 
     public Synonymer(String[] inputWordArray){
         this.inputWordArray = inputWordArray;
         this.chanceToSkip = 0;
+        this.thesaurusMap = new ThesaurusMap();
     }
 
     public Synonymer(){
@@ -32,14 +37,31 @@ public class Synonymer implements Callable {
     public String[] synomizeArray(String[] input) throws IOException {
         String[] result = new String[input.length];
         for(int i = 0; i<input.length; i++){
-            String[] synonymsArray = searchThesaurus(input[i], chanceToSkip);
+            if(randomChance(chanceToSkip)){
+                result[i] = input[i];
+                continue;
+            }
+            String[] synonymsArray = searchLocalThesaurus(input[i]);
             result[i] = chooseRandomSynonymFromArray(synonymsArray);
         }
         return result;
     }
 
     public String synomizeWord(String input) throws IOException {
-        return chooseRandomSynonymFromArray(searchThesaurus(input, chanceToSkip));
+        if(randomChance(chanceToSkip)){
+            return input;
+        }else{
+            return chooseRandomSynonymFromArray(searchLocalThesaurus(input));
+        }
+    }
+
+    private String[] searchLocalThesaurus(String input){
+        String[] synonyms = thesaurusMap.getSynonyms(input);
+        if (synonyms!=null){
+            return synonyms;
+        }else {
+            return new String[]{input, input};
+        }
     }
 
     private String[] searchThesaurus(String input, int chanceToSkip) throws IOException {
@@ -67,7 +89,7 @@ public class Synonymer implements Callable {
 
     private String chooseRandomSynonymFromArray(String[] synonymArray){
         Random random = new Random();
-        return synonymArray[random.nextInt(synonymArray.length - 1 )]+ " ";
+        return synonymArray[random.nextInt(synonymArray.length - 1 )];
     }
 
     private boolean randomChance(int chance){

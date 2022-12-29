@@ -91,9 +91,9 @@ public class Thesaurusizer {
 
     private void addActionListenersToButtons(){
         submitButton.addActionListener(e -> {
-            int wordsPerThread = 10;
+            final int WORDS_PER_THREAD = 10;
             String[] inputWords = inputArea.getText().split(" ");
-            String[][] splitInputWords = splitStringArray(inputWords, wordsPerThread);
+            String[][] splitInputWords = splitStringArray(inputWords, WORDS_PER_THREAD);
             FutureTask[] synonymTasks = new FutureTask[splitInputWords.length];
 
             for(int i = 0; i<synonymTasks.length; i++){
@@ -109,7 +109,7 @@ public class Thesaurusizer {
                 try {
                     String[] result = (String[]) ft.get();
                     for(String s : result){
-                        resultArea.append(s);
+                        resultArea.append(s + " ");
                     }
                 } catch (InterruptedException | ExecutionException ex) {
                     ex.printStackTrace();
