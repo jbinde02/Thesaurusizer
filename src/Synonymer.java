@@ -13,10 +13,10 @@ public class Synonymer implements Callable {
     private int chanceToSkip;
     private ThesaurusMap thesaurusMap;
 
-    public Synonymer(String[] inputWordArray, int chanceToSkip){
+    public Synonymer(String[] inputWordArray, int chanceToSkip, ThesaurusMap thesaurusMap){
         this.inputWordArray = inputWordArray;
         this.chanceToSkip = chanceToSkip;
-        this.thesaurusMap = new ThesaurusMap();
+        this.thesaurusMap = thesaurusMap;
     }
 
     public Synonymer(String[] inputWordArray){
@@ -88,6 +88,8 @@ public class Synonymer implements Callable {
     }
 
     private String chooseRandomSynonymFromArray(String[] synonymArray){
+        if(synonymArray.length == 1)
+            return synonymArray[0];
         Random random = new Random();
         return synonymArray[random.nextInt(synonymArray.length - 1 )];
     }

@@ -2,6 +2,8 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
@@ -18,10 +20,11 @@ public class Thesaurusizer {
     private final int CHANCE_TO_SKIP_MAX = 100;
     private final int CHANCE_TO_SKIP_INIT = 60;
     private int chanceToSkip = CHANCE_TO_SKIP_INIT;
+    private ThesaurusMap thesaurusMap;
     private Thesaurusizer(){
         // <Swing>
         frame = new JFrame("Thesaurusizer");
-        frame.setSize(600,600);
+        frame.setSize(1000,800);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
@@ -32,8 +35,9 @@ public class Thesaurusizer {
 
         inputArea = new JTextArea("Insert text...");
         inputArea.setLineWrap(true);
+        inputArea.setWrapStyleWord(true);
         inputPane = new JScrollPane(inputArea);
-        final Dimension DIMENSION = new Dimension(300, 150);
+        final Dimension DIMENSION = new Dimension(600, 200);
         inputPane.setPreferredSize(DIMENSION);
         inputPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         constraints.gridx = 0;
@@ -76,6 +80,7 @@ public class Thesaurusizer {
         resultArea = new JTextArea("");
         constraints.anchor = GridBagConstraints.CENTER;
         resultArea.setLineWrap(true);
+        resultArea.setWrapStyleWord(true);
         resultPane = new JScrollPane(resultArea);
         resultPane.setPreferredSize(DIMENSION);
         resultPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -87,17 +92,20 @@ public class Thesaurusizer {
 
         // </Swing>
 
+        thesaurusMap = new ThesaurusMap();
     }
 
     private void addActionListenersToButtons(){
         submitButton.addActionListener(e -> {
-            final int WORDS_PER_THREAD = 10;
+            final int WORDS_PER_THREAD = 200;
             String[] inputWords = inputArea.getText().split(" ");
             String[][] splitInputWords = splitStringArray(inputWords, WORDS_PER_THREAD);
             FutureTask[] synonymTasks = new FutureTask[splitInputWords.length];
 
+            resultArea.setText("");
+
             for(int i = 0; i<synonymTasks.length; i++){
-                synonymTasks[i] = new FutureTask<Synonymer>(new Synonymer(splitInputWords[i], chanceToSkip));
+                synonymTasks[i] = new FutureTask<Synonymer>(new Synonymer(splitInputWords[i], chanceToSkip, thesaurusMap));
             }
 
             for(FutureTask ft : synonymTasks){

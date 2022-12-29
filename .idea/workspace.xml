@@ -26,17 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c30bbaa-f05c-4c19-8933-b53023132266" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Thesaurusizer.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/json-simple-1.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Thesaurusizer/ThesaurusMap$Word.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Thesaurusizer/ThesaurusMap.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Thesaurusizer/en_thesaurus.jsonl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/en_thesaurus.jsonl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThesaurusMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thesaurusizer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Thesaurusizer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Thesaurusizer/Synonymer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thesaurusizer/Synonymer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Thesaurusizer/Thesaurusizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thesaurusizer/Thesaurusizer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Synonymer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Synonymer.java" afterDir="false" />
@@ -114,6 +104,14 @@
       <option name="presentableId" value="Default" />
       <updated>1595821136726</updated>
     </task>
+    <task id="LOCAL-00001" summary="Made some changes to move away from web scrapping and instead use a offline, local thesaurus.">
+      <created>1672276505337</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672276505337</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,10 +143,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Made some changes to move away from web scrapping and instead use a offline, local thesaurus." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="722" y="221" key="#com.intellij.ide.util.MemberChooser" timestamp="1672199240194">
+    <state x="722" y="221" key="#com.intellij.ide.util.MemberChooser" timestamp="1672277372482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="722" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672199240194" />
+    <state x="722" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672277372482" />
     <state x="790" y="230" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1672196359091">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -165,46 +163,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672198258687" />
-    <state width="1877" height="148" key="GridCell.Tab.0.bottom" timestamp="1672269159403">
+    <state width="1877" height="165" key="GridCell.Tab.0.bottom" timestamp="1672278192882">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672269159403" />
-    <state width="1877" height="148" key="GridCell.Tab.0.center" timestamp="1672269159403">
+    <state width="1877" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278192882" />
+    <state width="1877" height="165" key="GridCell.Tab.0.center" timestamp="1672278192882">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672269159403" />
-    <state width="1877" height="148" key="GridCell.Tab.0.left" timestamp="1672269159403">
+    <state width="1877" height="165" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278192882" />
+    <state width="1877" height="165" key="GridCell.Tab.0.left" timestamp="1672278192882">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672269159403" />
-    <state width="1877" height="148" key="GridCell.Tab.0.right" timestamp="1672269159403">
+    <state width="1877" height="165" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278192882" />
+    <state width="1877" height="165" key="GridCell.Tab.0.right" timestamp="1672278192882">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672269159403" />
-    <state width="1877" height="181" key="GridCell.Tab.1.bottom" timestamp="1672269159401">
+    <state width="1877" height="165" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278192882" />
+    <state width="1877" height="181" key="GridCell.Tab.1.bottom" timestamp="1672276930632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="181" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672269159401" />
-    <state width="1877" height="181" key="GridCell.Tab.1.center" timestamp="1672269159401">
+    <state width="1877" height="181" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276930632" />
+    <state width="1877" height="181" key="GridCell.Tab.1.center" timestamp="1672276930631">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="181" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672269159401" />
-    <state width="1877" height="181" key="GridCell.Tab.1.left" timestamp="1672269159401">
+    <state width="1877" height="181" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276930631" />
+    <state width="1877" height="181" key="GridCell.Tab.1.left" timestamp="1672276930631">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="181" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672269159401" />
-    <state width="1877" height="181" key="GridCell.Tab.1.right" timestamp="1672269159401">
+    <state width="1877" height="181" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276930631" />
+    <state width="1877" height="181" key="GridCell.Tab.1.right" timestamp="1672276930631">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="181" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672269159401" />
+    <state width="1877" height="181" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276930631" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1672276317367">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276317367" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1672276246239">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1672276513797">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276246239" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276513797" />
     <state x="342" y="140" key="new project wizard" timestamp="1672114188541">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -217,5 +215,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276297473" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Synonymer.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
