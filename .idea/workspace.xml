@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -26,11 +29,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c30bbaa-f05c-4c19-8933-b53023132266" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_13_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Thesaurusizer/Synonymer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thesaurusizer/Synonymer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Thesaurusizer/Thesaurusizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thesaurusizer/Thesaurusizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Synonymer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Synonymer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Thesaurusizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Thesaurusizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thesaurusizer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Thesaurusizer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thesaurusizer/Synonymer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thesaurusizer/ThesaurusMap$Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thesaurusizer/ThesaurusMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thesaurusizer/Thesaurusizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thesaurusizer/en_thesaurus.jsonl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Synonymer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Synonymer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ThesaurusMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ThesaurusMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Thesaurusizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Thesaurusizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +67,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:\Applications\IntelliJ IDEA Community Edition 2019.2.4\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -63,11 +87,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -83,14 +107,29 @@
       <command value="Thesarususizer" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Thesarususizer">
     <configuration name="Thesarususizer" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Thesaurusizer" />
       <module name="Thesaurusizer" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Thesaurusizer Project-jar-with-dependencies.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/Thesaurusizer Project-jar-with-dependencies.jar" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Thesarususizer" />
+      <item itemvalue="JAR Application.Thesaurusizer Project-jar-with-dependencies.jar" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.Thesaurusizer Project-jar-with-dependencies.jar" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -111,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672276505337</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Formatting changes for window and components. Moved the creation of the ThesarusMap to Thesaurusizer and passed it into Synonymer so we don't have to keep generating it.">
+      <created>1672278437123</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672278437123</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,13 +186,27 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Made some changes to move away from web scrapping and instead use a offline, local thesaurus." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made some changes to move away from web scrapping and instead use a offline, local thesaurus." />
+    <MESSAGE value="Formatting changes for window and components. Moved the creation of the ThesarusMap to Thesaurusizer and passed it into Synonymer so we don't have to keep generating it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatting changes for window and components. Moved the creation of the ThesarusMap to Thesaurusizer and passed it into Synonymer so we don't have to keep generating it." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1480" y="94" key="#Project_Structure" timestamp="1672371988976">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1480" y="94" key="#Project_Structure/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1672371988976" />
+    <state x="-1506" y="175" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1672376046356">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1506" y="175" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1672376046356" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672349753121" />
     <state x="722" y="221" key="#com.intellij.ide.util.MemberChooser" timestamp="1672277372482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="722" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672277372482" />
+    <state x="1161" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1672349856041">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1161" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672349856041" />
     <state x="790" y="230" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1672196359091">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -159,50 +219,55 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="757" y="405" key="DetectedRootsChooserDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672198230024" />
-    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1672198258687">
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1672350850080">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672198258687" />
-    <state width="1877" height="165" key="GridCell.Tab.0.bottom" timestamp="1672278192882">
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672350850080" />
+    <state width="1877" height="334" key="GridCell.Tab.0.bottom" timestamp="1672376506688">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1672376506688" />
+    <state width="1877" height="181" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278783718" />
+    <state width="1877" height="334" key="GridCell.Tab.0.center" timestamp="1672376506688">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="334" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1672376506688" />
+    <state width="1877" height="181" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278783718" />
+    <state width="1877" height="334" key="GridCell.Tab.0.left" timestamp="1672376506688">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="334" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1672376506688" />
+    <state width="1877" height="181" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278783718" />
+    <state width="1877" height="334" key="GridCell.Tab.0.right" timestamp="1672376506688">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="334" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1672376506688" />
+    <state width="1877" height="181" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278783718" />
+    <state width="1877" height="181" key="GridCell.Tab.1.bottom" timestamp="1672278783718">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278192882" />
-    <state width="1877" height="165" key="GridCell.Tab.0.center" timestamp="1672278192882">
+    <state width="1877" height="181" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278783718" />
+    <state width="1877" height="181" key="GridCell.Tab.1.center" timestamp="1672278783718">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="165" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278192882" />
-    <state width="1877" height="165" key="GridCell.Tab.0.left" timestamp="1672278192882">
+    <state width="1877" height="181" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278783718" />
+    <state width="1877" height="181" key="GridCell.Tab.1.left" timestamp="1672278783718">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="165" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278192882" />
-    <state width="1877" height="165" key="GridCell.Tab.0.right" timestamp="1672278192882">
+    <state width="1877" height="181" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278783718" />
+    <state width="1877" height="181" key="GridCell.Tab.1.right" timestamp="1672278783718">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="165" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278192882" />
-    <state width="1877" height="181" key="GridCell.Tab.1.bottom" timestamp="1672276930632">
+    <state width="1877" height="181" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278783718" />
+    <state x="-1388" y="118" key="SettingsEditor" timestamp="1672374561611">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1388" y="118" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1672374561611" />
+    <state x="-1040" y="117" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672352639693" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1672278444941">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="181" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276930632" />
-    <state width="1877" height="181" key="GridCell.Tab.1.center" timestamp="1672276930631">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="181" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276930631" />
-    <state width="1877" height="181" key="GridCell.Tab.1.left" timestamp="1672276930631">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="181" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276930631" />
-    <state width="1877" height="181" key="GridCell.Tab.1.right" timestamp="1672276930631">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="181" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276930631" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1672276317367">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276317367" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1672276513797">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276513797" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672278444941" />
     <state x="342" y="140" key="new project wizard" timestamp="1672114188541">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -211,16 +276,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="712" y="323" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672195821108" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1672276297473">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1672351690516">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672276297473" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1672351690516" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Synonymer.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Synonymer.java</url>
           <line>93</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
