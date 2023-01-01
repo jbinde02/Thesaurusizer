@@ -1,8 +1,3 @@
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.Random;
 import java.util.concurrent.Callable;
 
@@ -19,22 +14,12 @@ public class Synonymer implements Callable {
         this.thesaurusMap = thesaurusMap;
     }
 
-    public Synonymer(String[] inputWordArray){
-        this.inputWordArray = inputWordArray;
-        this.chanceToSkip = 0;
-        this.thesaurusMap = new ThesaurusMap();
-    }
-
-    public Synonymer(){
-
-    }
-
     @Override
     public String[] call() throws Exception {
         return synomizeArray(inputWordArray);
     }
 
-    public String[] synomizeArray(String[] input) throws IOException {
+    public String[] synomizeArray(String[] input){
         String[] result = new String[input.length];
         for(int i = 0; i<input.length; i++){
             if(randomChance(chanceToSkip)){
@@ -47,43 +32,12 @@ public class Synonymer implements Callable {
         return result;
     }
 
-    public String synomizeWord(String input) throws IOException {
-        if(randomChance(chanceToSkip)){
-            return input;
-        }else{
-            return chooseRandomSynonymFromArray(searchLocalThesaurus(input));
-        }
-    }
-
     private String[] searchLocalThesaurus(String input){
         String[] synonyms = thesaurusMap.getSynonyms(input);
         if (synonyms!=null){
             return synonyms;
         }else {
             return new String[]{input, input};
-        }
-    }
-
-    private String[] searchThesaurus(String input, int chanceToSkip) throws IOException {
-        if(randomChance(chanceToSkip)){
-            return new String[]{input, input};
-        }
-        String url = "https://www.thesaurus.com/browse/" + input;
-        if(isValidURL(url)){
-            Document doc = Jsoup.connect(url).get();
-            String element = doc.select(".et6tpn80").first().text(); // ".et6tpn80" is the HTML Class where the synonyms are displayed
-            return element.split(" ");
-        }
-        return new String[]{input, input};
-    }
-
-    private boolean isValidURL(String urlInput) throws IOException {
-        URL url = new URL(urlInput);
-        HttpURLConnection huc = (HttpURLConnection) url.openConnection();
-        if(huc.getResponseCode() == 200){
-            return true;
-        }else{
-            return false;
         }
     }
 
@@ -102,13 +56,5 @@ public class Synonymer implements Callable {
             chance = 0;
         }
         return chance >= random.nextInt(100);
-    }
-
-    public void setChanceToSkip(int chanceToSkip) {
-        this.chanceToSkip = chanceToSkip;
-    }
-
-    public void setInputWordArray(String[] inputWordArray) {
-        this.inputWordArray = inputWordArray;
     }
 }
