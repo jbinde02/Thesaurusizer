@@ -1,13 +1,6 @@
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.io.IOException;
 import java.util.Arrays;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
 
 /*
 Main class. Contains UI and controller code.
@@ -109,31 +102,13 @@ public class Thesaurusizer {
 
     private void addActionListenersToButtons(){
         submitButton.addActionListener(e -> {
-            final int WORDS_PER_THREAD = 200;
-            String[] inputWords = inputArea.getText().split(" ");
-            String[][] splitInputWords = splitStringArray(inputWords, WORDS_PER_THREAD);
-            FutureTask[] synonymTasks = new FutureTask[splitInputWords.length];
-
+            Synonymer synonymer = new Synonymer( thesaurusMap);
             resultArea.setText("");
+            String[] inputWords = inputArea.getText().split(" ");
+            String[] result = synonymer.synomizeArray(inputWords, chanceToSkip);
 
-            for(int i = 0; i<synonymTasks.length; i++){
-                synonymTasks[i] = new FutureTask<Synonymer>(new Synonymer(splitInputWords[i], chanceToSkip, thesaurusMap));
-            }
-
-            for(FutureTask ft : synonymTasks){
-                Thread t = new Thread(ft);
-                t.start();
-            }
-
-            for(FutureTask ft : synonymTasks){
-                try {
-                    String[] result = (String[]) ft.get();
-                    for(String s : result){
-                        resultArea.append(s + " ");
-                    }
-                } catch (InterruptedException | ExecutionException ex) {
-                    ex.printStackTrace();
-                }
+            for(String s : result){
+                resultArea.append(s + " ");
             }
         });
 
@@ -151,7 +126,7 @@ public class Thesaurusizer {
      */
     private String[][] splitStringArray(String[] inputArray, int split){
         String[][] splitWordArrays = new String[inputArray.length / split + 1][];
-        String[] splitArray = new String[3];
+        String[] splitArray;
         for(int i = 0; i<splitWordArrays.length; i++){
             if((inputArray.length - 1) > i * split + split - 1){
                 splitArray = Arrays.copyOfRange(inputArray,i * split,i * split + split);

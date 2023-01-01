@@ -28,11 +28,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c30bbaa-f05c-4c19-8933-b53023132266" name="Default Changelist" comment="Begin setting up project build tool">
+    <list default="true" id="5c30bbaa-f05c-4c19-8933-b53023132266" name="Default Changelist" comment="Removed unused jsoup and web scrapping methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thesaurusizer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Thesaurusizer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/en_thesaurus.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/en_thesaurus.jsonl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Synonymer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Synonymer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Thesaurusizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Thesaurusizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,15 +63,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Jabbe\OneDrive\Documents\Projects\Thesaurusizer\libs" />
@@ -98,6 +97,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Thesaurusizer Project.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/Thesaurusizer Project.jar" />
+      <method v="2" />
+    </configuration>
     <configuration name="ThesaurusizerComplete.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/ThesaurusizerComplete.jar" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -105,11 +108,13 @@
     </configuration>
     <list>
       <item itemvalue="Application.Thesarususizer" />
+      <item itemvalue="JAR Application.Thesaurusizer Project.jar" />
       <item itemvalue="JAR Application.ThesaurusizerComplete.jar" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JAR Application.ThesaurusizerComplete.jar" />
+        <item itemvalue="JAR Application.Thesaurusizer Project.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -146,7 +151,28 @@
       <option name="project" value="LOCAL" />
       <updated>1672376858569</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updated pom and moved resources">
+      <created>1672441687033</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672441687033</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added comments">
+      <created>1672555029505</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672555029505</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Removed unused jsoup and web scrapping methods">
+      <created>1672555232503</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1672555232503</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,17 +202,9 @@
     <MESSAGE value="Made some changes to move away from web scrapping and instead use a offline, local thesaurus." />
     <MESSAGE value="Formatting changes for window and components. Moved the creation of the ThesarusMap to Thesaurusizer and passed it into Synonymer so we don't have to keep generating it." />
     <MESSAGE value="Begin setting up project build tool" />
-    <option name="LAST_COMMIT_MESSAGE" value="Begin setting up project build tool" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Synonymer.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Updated pom and moved resources" />
+    <MESSAGE value="Added comments" />
+    <MESSAGE value="Removed unused jsoup and web scrapping methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unused jsoup and web scrapping methods" />
   </component>
 </project>

@@ -1,25 +1,15 @@
 import java.util.Random;
-import java.util.concurrent.Callable;
 
 // Offline Thesaurus provided by https://github.com/zaibacu/thesaurus
 
-public class Synonymer implements Callable {
-    private String[] inputWordArray;
-    private int chanceToSkip;
+public class Synonymer{
     private ThesaurusMap thesaurusMap;
 
-    public Synonymer(String[] inputWordArray, int chanceToSkip, ThesaurusMap thesaurusMap){
-        this.inputWordArray = inputWordArray;
-        this.chanceToSkip = chanceToSkip;
+    public Synonymer(ThesaurusMap thesaurusMap){
         this.thesaurusMap = thesaurusMap;
     }
 
-    @Override
-    public String[] call() throws Exception {
-        return synomizeArray(inputWordArray);
-    }
-
-    public String[] synomizeArray(String[] input){
+    public String[] synomizeArray(String[] input, int chanceToSkip){
         String[] result = new String[input.length];
         for(int i = 0; i<input.length; i++){
             if(randomChance(chanceToSkip)){
