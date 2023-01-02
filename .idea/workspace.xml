@@ -28,10 +28,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c30bbaa-f05c-4c19-8933-b53023132266" name="Default Changelist" comment="Removed unused jsoup and web scrapping methods">
+    <list default="true" id="5c30bbaa-f05c-4c19-8933-b53023132266" name="Default Changelist" comment="Update pom to remove dependency">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_13_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Synonymer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Synonymer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Thesaurusizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Thesaurusizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thesaurusizer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Thesaurusizer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/json-simple-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/jsoup-1.13.1.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,15 +65,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Jabbe\OneDrive\Documents\Projects\Thesaurusizer\libs" />
@@ -172,7 +174,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672555232503</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Removed &quot;multithreading&quot; related code. Really doesn't seem necessary for this application.">
+      <created>1672560912803</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1672560912803</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update pom to remove dependency">
+      <created>1672561270987</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1672561270987</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,6 +221,8 @@
     <MESSAGE value="Updated pom and moved resources" />
     <MESSAGE value="Added comments" />
     <MESSAGE value="Removed unused jsoup and web scrapping methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unused jsoup and web scrapping methods" />
+    <MESSAGE value="Removed &quot;multithreading&quot; related code. Really doesn't seem necessary for this application." />
+    <MESSAGE value="Update pom to remove dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update pom to remove dependency" />
   </component>
 </project>
