@@ -8,7 +8,7 @@ The program reads from a locally stored JSONlines files representing a thesaurus
 The outpus don't really make sense most of the time but that is how it is.
 
 ### Technologies
-This program is written in Java and uses the Java core lirbries for UI and collections. 
+This program is written in Java and uses the Java core libraries for UI and collections. 
 
 The only library used in this project is the json-simple library for Java found here:
 * https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple/1.1.1
